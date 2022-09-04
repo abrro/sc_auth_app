@@ -1,0 +1,23 @@
+{
+  "name": "sc_auth_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app_auth.js",
+  "scripts": {
+    "start": "node app_auth.js"
+  },
+  "dependencies": {
+    "@hapi/joi-date": "^2.0.1",
+    "bcrypt": "^5.0.1",
+    "buffer": "^6.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.5.5",
+    "mysql2": "^2.3.3",
+    "sequelize": "^7.0.0-alpha.2",
+    "socket.io": "^4.4.0"
+  }
+}
