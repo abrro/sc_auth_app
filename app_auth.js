@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 
-app.post('/register', (req, res) => {
+app.post('/api_register', (req, res) => {
 
     const obj = {
         name: req.body.name,
@@ -43,7 +43,7 @@ app.post('/register', (req, res) => {
     }).catch( err => res.status(500).json(err) );
 });
 
-app.post('/login', (req, res) => {
+app.post('/api_login', (req, res) => {
 
     Users.findOne({ where: { email: req.body.email } })
         .then( usr => {
