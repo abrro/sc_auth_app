@@ -44,9 +44,10 @@ app.post('/api_register', (req, res) => {
 });
 
 app.post('/api_login', (req, res) => {
-
+    console.log("Logging in");
     Users.findOne({ where: { email: req.body.email } })
         .then( usr => {
+            console.log("Found user.")
 
             if (bcrypt.compareSync(req.body.password, usr.password)) {
                 const obj = {
@@ -62,7 +63,11 @@ app.post('/api_login', (req, res) => {
                 res.status(400).json({ msg: "Invalid credentials"});
             }
         })
-        .catch( err => res.status(500).json(err) );
+        .catch( err => 
+            {
+                console.log("Errror while finding user.")
+                res.status(500).json(err)
+            } );
 });
 
 app.listen({ port: process.env.PORT || 9000 }, async () => {
